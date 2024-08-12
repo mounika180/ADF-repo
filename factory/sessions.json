@@ -1,0 +1,9 @@
+{
+	"name": "sessions",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4461bd91-15b6-45b2-8a60-f9718e3b93a6",
+		"tenantId": "d3ea576a-d4b7-4701-94ca-147bd08ca377"
+	}
+}

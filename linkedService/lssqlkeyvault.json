@@ -1,0 +1,24 @@
+{
+	"name": "lssqlkeyvault",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sqlcloud123.database.windows.net",
+			"database": "sqldatabase123",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "pavuluri123",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "lskeyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "connectionstring"
+			}
+		}
+	}
+}
