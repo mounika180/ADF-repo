@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "sessions"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"LSblobSA_connectionString": {
+			"value": ""
+		},
+		"session25_connectionString": {
+			"value": ""
+		},
+		"session27linkblob_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://sessiondestination.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sqlcloud123.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "sqldatabase123"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "pavuluri123"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "sqlcloud123.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "sqldatabase123"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "pavuluri123"
+		},
+		"lskeyvault_properties_typeProperties_baseUrl": {
+			"value": "https://mounikavault.vault.azure.net/"
+		},
+		"lssqlkeyvault_properties_typeProperties_server": {
+			"value": "sqlcloud123.database.windows.net"
+		},
+		"lssqlkeyvault_properties_typeProperties_database": {
+			"value": "sqldatabase123"
+		},
+		"lssqlkeyvault_properties_typeProperties_userName": {
+			"value": "pavuluri123"
+		},
+		"event trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/019ead8b-377e-45fa-99af-8d29416dffec/resourceGroups/mounika/providers/Microsoft.Storage/storageAccounts/sessionblob"
+		}
+	}
+}
