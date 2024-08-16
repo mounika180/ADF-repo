@@ -7,6 +7,18 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "sessions"
 		},
+		"lssqlkeyvault_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlcloud123.database.windows.net"
+		},
+		"lssqlkeyvault_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldatabase123"
+		},
+		"lssqlkeyvault_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "pavuluri123"
+		},
 		"event trigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/019ead8b-377e-45fa-99af-8d29416dffec/resourceGroups/mounika/providers/Microsoft.Storage/storageAccounts/sessionblob"
@@ -16,6 +28,57 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/s27Datasetblob')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "session27linkblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "session25"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/lssqlkeyvault')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('lssqlkeyvault_properties_typeProperties_server')]",
+					"database": "[parameters('lssqlkeyvault_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('lssqlkeyvault_properties_typeProperties_userName')]",
+					"password": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "lskeyvault",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "connectionstring"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -417,7 +480,9 @@
 				"annotations": [],
 				"lastPublishTime": "2024-08-11T18:32:14Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/s27Datasetblob')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline5')]",
@@ -463,7 +528,9 @@
 				"annotations": [],
 				"lastPublishTime": "2024-08-11T18:45:07Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/s27Datasetblob')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline6')]",

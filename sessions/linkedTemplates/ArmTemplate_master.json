@@ -147,15 +147,6 @@
 					},
 					"lskeyvault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('lskeyvault_properties_typeProperties_baseUrl')]"
-					},
-					"lssqlkeyvault_properties_typeProperties_server": {
-						"value": "[parameters('lssqlkeyvault_properties_typeProperties_server')]"
-					},
-					"lssqlkeyvault_properties_typeProperties_database": {
-						"value": "[parameters('lssqlkeyvault_properties_typeProperties_database')]"
-					},
-					"lssqlkeyvault_properties_typeProperties_userName": {
-						"value": "[parameters('lssqlkeyvault_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -174,6 +165,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"lssqlkeyvault_properties_typeProperties_server": {
+						"value": "[parameters('lssqlkeyvault_properties_typeProperties_server')]"
+					},
+					"lssqlkeyvault_properties_typeProperties_database": {
+						"value": "[parameters('lssqlkeyvault_properties_typeProperties_database')]"
+					},
+					"lssqlkeyvault_properties_typeProperties_userName": {
+						"value": "[parameters('lssqlkeyvault_properties_typeProperties_userName')]"
 					},
 					"event trigger_properties_typeProperties_scope": {
 						"value": "[parameters('event trigger_properties_typeProperties_scope')]"
