@@ -1,0 +1,40 @@
+{
+	"name": "pipeline7",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute SSIS package1",
+				"type": "ExecuteSSISPackage",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"packageLocation": {
+						"type": "InlinePackage",
+						"typeProperties": {
+							"packagePassword": {
+								"type": "SecureString",
+								"value": "**********"
+							},
+							"packageName": "Package.dtsx",
+							"packageContent": "VER001_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",
+							"packageLastModifiedDate": "2024-08-16T01:01:39.681Z UTC-4:00"
+						}
+					},
+					"environmentPath": null,
+					"connectVia": {
+						"referenceName": "integrationRuntime1",
+						"type": "IntegrationRuntimeReference"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
