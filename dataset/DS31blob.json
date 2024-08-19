@@ -1,0 +1,23 @@
+{
+	"name": "DS31blob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS31blob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "2017_Students_Batch.csv",
+				"container": "session25"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
