@@ -19,6 +19,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
 		},
+		"LS31blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS31blob'"
+		},
+		"LS31desti_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS31desti'"
+		},
+		"LS_31blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_31blob'"
+		},
 		"LSblobSA_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LSblobSA'"
@@ -58,6 +70,10 @@
 		"AzureSqlDatabase2_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "pavuluri123"
+		},
+		"LS31desti_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sessiondestination.dfs.core.windows.net/"
 		},
 		"lskeyvault_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -115,6 +131,15 @@
 					"AzureSqlDatabase2_password": {
 						"value": "[parameters('AzureSqlDatabase2_password')]"
 					},
+					"LS31blob_connectionString": {
+						"value": "[parameters('LS31blob_connectionString')]"
+					},
+					"LS31desti_accountKey": {
+						"value": "[parameters('LS31desti_accountKey')]"
+					},
+					"LS_31blob_connectionString": {
+						"value": "[parameters('LS_31blob_connectionString')]"
+					},
 					"LSblobSA_connectionString": {
 						"value": "[parameters('LSblobSA_connectionString')]"
 					},
@@ -144,6 +169,9 @@
 					},
 					"AzureSqlDatabase2_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
+					},
+					"LS31desti_properties_typeProperties_url": {
+						"value": "[parameters('LS31desti_properties_typeProperties_url')]"
 					},
 					"lskeyvault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('lskeyvault_properties_typeProperties_baseUrl')]"

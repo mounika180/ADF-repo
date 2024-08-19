@@ -14,6 +14,15 @@
 		"AzureSqlDatabase2_password": {
 			"value": ""
 		},
+		"LS31blob_connectionString": {
+			"value": ""
+		},
+		"LS31desti_accountKey": {
+			"value": ""
+		},
+		"LS_31blob_connectionString": {
+			"value": ""
+		},
 		"LSblobSA_connectionString": {
 			"value": ""
 		},
@@ -43,6 +52,9 @@
 		},
 		"AzureSqlDatabase2_properties_typeProperties_userName": {
 			"value": "pavuluri123"
+		},
+		"LS31desti_properties_typeProperties_url": {
+			"value": "https://sessiondestination.dfs.core.windows.net/"
 		},
 		"lskeyvault_properties_typeProperties_baseUrl": {
 			"value": "https://mounikavault.vault.azure.net/"
